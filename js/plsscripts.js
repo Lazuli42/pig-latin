@@ -12,24 +12,28 @@ $("#form").submit(function(event){
   var pigLatin = []
 
   // stores vowels into an array for easy access
-  var vowels = ["a", "e", "i", "o", "u", "y"]
+  var vowels = ["a", "e", "i", "o", "u", "y", "A", "E", "I", "O", "U", "Y"]
 
-  for (i=0; i < characters.length; i++) {
-    if ((characters[0]==="q") &&  (characters[1]==="u")) {
-      characters.push(characters[0])
-      characters.push(characters[1])
-      characters.splice(0,2)
-    }
-    else if (vowels.includes(characters[0]) && (characters[characters.length-1] != "ay")) {
-      characters.push("ay");
-    console.log(characters)
-    }
-    else if (!vowels.includes(characters[0])) {
-      characters.push(characters[0])
-      characters.splice(0,1)
-    }
-    else {
-
+  if ((characters[0]==="y") || (characters[0]==="Y")) {
+    characters.push(characters[0])
+    characters.splice(0,1)
+    characters.push("ay");
+  }
+  else {
+    for (i=0; i < characters.length; i++) {
+      if ((characters[0]==="q") || (characters[0]==="Q") && (characters[1]==="u") || (characters[1]==="U")) {
+        characters.push(characters[0])
+        characters.push(characters[1])
+        characters.splice(0,2)
+      }
+      else if (vowels.includes(characters[0]) && (characters[characters.length-1] != "ay")) {
+        characters.push("ay");
+      console.log(characters)
+      }
+      else if (!vowels.includes(characters[0])) {
+        characters.push(characters[0])
+        characters.splice(0,1)
+      }
     }
   }
   console.log(characters)
