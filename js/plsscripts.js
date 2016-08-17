@@ -15,7 +15,12 @@ $("#form").submit(function(event){
   var vowels = ["a", "e", "i", "o", "u", "y"]
 
   for (i=0; i < characters.length; i++) {
-    if (vowels.includes(characters[0]) && (characters[characters.length-1] != "ay")) {
+    if ((characters[0]==="q") &&  (characters[1]==="u")) {
+      characters.push(characters[0])
+      characters.push(characters[1])
+      characters.splice(0,2)
+    }
+    else if (vowels.includes(characters[0]) && (characters[characters.length-1] != "ay")) {
       characters.push("ay");
     console.log(characters)
     }
@@ -24,8 +29,8 @@ $("#form").submit(function(event){
       characters.splice(0,1)
     }
     else {
-      alert("oops!")
-    }  
+
+    }
   }
   console.log(characters)
 })
