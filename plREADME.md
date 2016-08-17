@@ -6,9 +6,7 @@
 
 ## Specs
 
-1. The program does nothing to non-alphabetical characters, since they do not contain consonants or vowels.
-Example Input: 3
-Example Output: 3
+
 
 2. The program adds "ay" to single-letter words beginning with a vowel.
 Example Input: i
@@ -29,6 +27,20 @@ Example Output: alertay
 6. For words beginning with a "y", treat "y" as a consonant.
   Example Input: yellow
   Example Output: elllowyay
+
+  1. The program displays an alert to non-alphabetical characters, since they do not contain consonants or vowels.
+  Example Input: 3
+  Example Output: 3
+
+  7.  The program will treat multiple words that start as a consonant the same as single words.
+  Example Input: Pig Latin
+  Example Output: igpay atinlay
+
+  8.  The program will treat multiple words that start with both vowels and consonants the same as single words.  
+  Example Input: I love Pig Latin.
+  Example Output: Iay ovelay igpay atinlay.
+
+  9.  Capitals/special characters treated the same as lowercase letters.
 
 ## Setup/Installation Requirements
 

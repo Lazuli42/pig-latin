@@ -1,25 +1,45 @@
+
 $("#form").submit(function(event){
   event.preventDefault();
-
+  // defines inputted string as a variable
   var userInput = $("#userInput").val();
+  // var userInput = ""
 
-  var inputArray = userInput.split("");
-    console.log(inputArray)
+  // converts string to an array of characters
+  var characters = userInput.split("");
+    console.log(characters)
 
+  var pigLatin = []
+
+  // stores vowels into an array for easy access
   var vowels = ["a", "e", "i", "o", "u", "y"]
-
-  var test = vowels.forEach(function(vowel) {
-    if (inputArray[0].includes(vowel,0)) {
-    inputArray.push("ay");
+    if (vowels.includes(characters[0])) {
+      characters.push("ay");
+    console.log(characters)
     }
-    console.log(inputArray)
-  })
+    else {
+      characters.push(characters[0])
+      characters.splice(0,1)
+      characters.push("ay");
+    }
+      console.log(characters)
+    })
 
-    });
-
-
-
-
+//   for (i = 0; i <= characters.length; i++) {
+//
+//       else if (characters[0] != vowel) {
+//
+//       }
+//     });
+//   };
+// });
+/*
+for(start here; stop when this condition is false; change something every time through loop, affecting the condition)
+*/
+// var myFaveNumber = 10;
+// for(var i = 0; i < myFaveNumber; myFaveNumber--){
+  // loop from i = 0, decreasing myFaveNumber by 1 each time.
+  // goes until myFaveNumber === 1 because then i is not < myFaveNumber.
 
 
 // 1. The program converts inputs in an array of characters.
