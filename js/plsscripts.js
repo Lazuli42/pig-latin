@@ -13,17 +13,22 @@ $("#form").submit(function(event){
 
   // stores vowels into an array for easy access
   var vowels = ["a", "e", "i", "o", "u", "y"]
-    if (vowels.includes(characters[0])) {
+
+  for (i=0; i < characters.length; i++) {
+    if (vowels.includes(characters[0]) && (characters[characters.length-1] != "ay")) {
       characters.push("ay");
     console.log(characters)
     }
-    else {
+    else if (!vowels.includes(characters[0])) {
       characters.push(characters[0])
       characters.splice(0,1)
-      characters.push("ay");
     }
-      console.log(characters)
-    })
+    else {
+      alert("oops!")
+    }  
+  }
+  console.log(characters)
+})
 
 //   for (i = 0; i <= characters.length; i++) {
 //
